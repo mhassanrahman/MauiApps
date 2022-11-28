@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phoneword", "Phoneword\Phoneword.csproj", "{BA5C163E-337F-47BB-8264-7A6BBEDEBFB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes", "Notes\Notes.csproj", "{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA5C163E-337F-47BB-8264-7A6BBEDEBFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5C163E-337F-47BB-8264-7A6BBEDEBFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5C163E-337F-47BB-8264-7A6BBEDEBFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5C163E-337F-47BB-8264-7A6BBEDEBFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5C163E-337F-47BB-8264-7A6BBEDEBFB2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F403B8-9C12-4C1A-B82B-C29E12CA4B20}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal
