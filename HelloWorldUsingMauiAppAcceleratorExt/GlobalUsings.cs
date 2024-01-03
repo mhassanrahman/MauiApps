@@ -1,0 +1,16 @@
+﻿global using Microsoft.AppCenter;
+global using Microsoft.AppCenter.Analytics;
+global using Microsoft.AppCenter.Crashes;
+global using CommunityToolkit.Maui;
+global using SkiaSharp.Views.Maui.Controls.Hosting;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using HelloWorldUsingMauiAppAcceleratorExt.ViewModels;
+global using HelloWorldUsingMauiAppAcceleratorExt.Views;
+global using System.Collections.ObjectModel;
+global using System.ComponentModel;
+global using System.Diagnostics;
+global using System.Globalization;
+global using System.Runtime.CompilerServices;
+global using System.Text.Json;
+global using System.Threading.Tasks;

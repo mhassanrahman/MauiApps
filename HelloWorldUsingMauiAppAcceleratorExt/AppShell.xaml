@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+	x:Class="HelloWorldUsingMauiAppAcceleratorExt.AppShell"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:views="clr-namespace:HelloWorldUsingMauiAppAcceleratorExt.Views"
+	xmlns:local="clr-namespace:HelloWorldUsingMauiAppAcceleratorExt">
+
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="SignIn"
+		Icon="iconsample.png"
+		ContentTemplate="{DataTemplate views:SignInPage}"
+		Route="SignInPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Main"
+		Icon="iconsample.png"
+		ContentTemplate="{DataTemplate views:MainPage}"
+		Route="MainPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Localization"
+		Icon="iconlocalization.png"
+		ContentTemplate="{DataTemplate views:LocalizationPage}"
+		Route="LocalizationPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Lottie"
+		Icon="iconlottie.png"
+		ContentTemplate="{DataTemplate views:LottiePage}"
+		Route="LottiePage" />
+</Shell>
