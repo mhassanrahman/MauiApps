@@ -1,23 +1,17 @@
-using aspnetcore_web_api.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-var services = builder.Services;
-var configuration = builder.Configuration;
 
-services.AddCors(o => o.AddPolicy("CORS_ALLOW_ALL", builder =>
+builder.Services.AddCors(o => o.AddPolicy("CORS_ALLOW_ALL", builder =>
 {
     builder.AllowAnyOrigin()
            .AllowAnyMethod()
            .AllowAnyHeader();
 }));
 
-services.AddControllers();
-services.AddAuthentication(o =>
+builder.Services.AddControllers();
+builder.Services.AddAuthentication(o =>
 {
     o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 })
@@ -50,26 +44,19 @@ services.AddAuthentication(o =>
 //});
 
 //Cookie Policy needed for External Auth
-services.Configure<CookiePolicyOptions>(options =>
+builder.Services.Configure<CookiePolicyOptions>(options =>
 {
     options.CheckConsentNeeded = context => true;
     options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseInMemoryDatabase("AppDb"));
-
 builder.Services.AddAuthorization();
 
-builder.Services.AddIdentityApiEndpoints<IdentityUser>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-services.AddEndpointsApiExplorer();
-services.AddSwaggerGen();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.MapIdentityApi<IdentityUser>();
 app.UseSwagger();
 app.UseSwaggerUI();
 
