@@ -25,15 +25,17 @@ namespace aspnetcore_web_api.Controllers
             else
             {
                 var claims = auth.Principal.Identities.FirstOrDefault()?.Claims;
+                var name = claims?.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Name)?.Value;
                 var email = claims?.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Email)?.Value;
 
                 // Get parameters to send back to the callback
                 var qs = new Dictionary<string, string>
                 {
+                    { "name", name },
                     { "email", email },
                     { "access_token", auth.Properties.GetTokenValue("access_token") },
                     { "refresh_token", auth.Properties.GetTokenValue("refresh_token") ?? string.Empty },
-                    { "expires_in", (auth.Properties.ExpiresUtc?.ToUnixTimeSeconds() ?? -1).ToString() }
+                    { "expires_in", auth.Properties.ExpiresUtc.ToString() }
                 };
 
                 // Build the result url

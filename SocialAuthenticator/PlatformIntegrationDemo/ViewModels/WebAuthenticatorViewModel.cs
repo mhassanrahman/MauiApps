@@ -47,6 +47,7 @@ namespace PlatformIntegrationDemo.ViewModels
                     {
                         IncludeEmailScope = true,
                         IncludeFullNameScope = true,
+                        
                     };
                     r = await AppleSignInAuthenticator.AuthenticateAsync(options);
                 }
@@ -63,7 +64,12 @@ namespace PlatformIntegrationDemo.ViewModels
                     AuthToken += $"Name: {name}{Environment.NewLine}";
                 if (r.Properties.TryGetValue("email", out var email) && !string.IsNullOrEmpty(email))
                     AuthToken += $"Email: {email}{Environment.NewLine}";
-                AuthToken += r?.AccessToken ?? r?.IdToken;
+                if (r.Properties.TryGetValue("expires_in", out var expires_in) && !string.IsNullOrEmpty(expires_in))
+                    AuthToken += $"Expires In: {expires_in}{Environment.NewLine}";
+                                
+                //AuthToken += r?.AccessToken ?? r?.IdToken;
+                AuthToken += $"AccessToken: {r?.AccessToken}{Environment.NewLine}";
+                AuthToken += $"IdToken: {r?.IdToken}{Environment.NewLine}";
             }
             catch (OperationCanceledException)
             {
